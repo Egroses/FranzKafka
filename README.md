@@ -36,7 +36,7 @@ docker compose exec producer python producer.py
 ```
 ![producer picture](https://github.com/Egroses/FranzKafka/blob/main/Images/producer%26consumerRun.png)
 
-2. Open third terminal and run:
+2. Open thirth terminal and run:
 ```
 docker compose exec consumer python consumer.py
 ```
@@ -54,5 +54,5 @@ db.myCollection.insertOne({"name": "Emirhan", "surname": "Gül"})
 ```
 ![insert picture](https://github.com/Egroses/FranzKafka/blob/main/Images/insert.png)
 
-5. When new document inserted, you should see `A new document has been sent to kafka!` in second terminal and `A new document has been received!` in thirth terminal.
+5. You should see `A new document is :(document)` in thirth terminal and `New document detected: (document)!` in fourth terminal.
 ![results picture](https://github.com/Egroses/FranzKafka/blob/main/Images/Results.png)
