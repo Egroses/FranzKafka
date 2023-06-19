@@ -3,97 +3,55 @@
 Simple CDC Application Development Project with Apache Kafka
 
 
-## Description
+## Project Description
 
-This project is a Change Data Capture (CDC) system designed to capture and track real-time data changes in a database. It provides a reliable and efficient way to monitor and replicate data changes across multiple systems or applications. By capturing and processing database events such as inserts, updates, and deletes, our CDC system enables seamless data synchronization and replication, facilitating data integration and analysis.
+Our CDC system is specifically designed to track and capture changes in a database in real-time, ensuring that all data modifications are constantly monitored and replicated across various systems and applications. By processing events related to insertions, updates, and deletions, our CDC solution offers a dependable and efficient method for synchronizing and replicating data, making it easier to integrate and analyze information from different sources.
 
-## Features
+## Project Functions
 
-- Real-time monitoring of database changes.
-- Capturing and processing of insert, update, and delete events.
-- Efficient and reliable data replication between different systems.
-- Support for various databases and data formats.
-- Configurable event filtering and transformation capabilities.
-- Robust error handling and data consistency mechanisms.
+The key features of our CDC system include its ability to provide real-time monitoring of changes made to databases, as well as its capacity to capture and process events related to inserting, updating, and deleting data. Our solution also offers efficient and dependable data replication services that allow for seamless integration across multiple systems and support for various databases and data formats. In addition, our CDC system comes equipped with configurable event filtering and transformation capabilities, as well as robust error handling and data consistency mechanisms for enhanced reliability and security.
 
-## Installation
+## Setup
 
-1. Install docker-desktop.
-2. Clone repository.
-
+1. Clone repository : "https://github.com/Egroses/FranzKafka.git" .
+2. Install docker-desktop.
+3. Build docker compose.
 ```
-git clone https://github.com/hukumrat/cdc.git
+docker compose build
+![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
 ```
-
-3. Move to cdc folder.
-
-```
-cd cdc
-```
-
-3. Run docker compose.
-
-```
-docker-compose up
-```
-
-4. When you see `Kafka Server started` on terminal it's done!
 
 ## Usage
 
-1. Open a terminal in cdc folder and run docker compose.
-
+1. Run docker compose.
 ```
-docker-compose up
-```
-
-2. Open second terminal in cdc folder and run:
-
-```
-docker-compose exec producer python producer.py
+docker compose up
+![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
 ```
 
+2. Open second terminal and run:
+
 ```
-docker-compose exec consumer python consumer.py
+docker compose exec producer python producer.py
+![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
+```
+
+2. Open third terminal and run:
+```
+docker compose exec consumer python consumer.py
+![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
 ```
 
 4. Open fourth and last terminal, connect mongo and insert a document:
 
 ```
 docker-compose exec mongodb mongosh
+![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
 use myDatabase
+![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
 db.myCollection.insertOne({"name": "Emirhan", "surname": "Gül"})
+![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
 ```
 
 5. When new document inserted, you should see `A new document has been sent to kafka!` in second terminal and `A new document has been received!` in thirth terminal.
-
-## Contributing
-
-Thank you for considering contributing to this project! Contributions are welcome and appreciated. To contribute, please follow these guidelines:
-
-1. Fork the repository and clone it to your local machine.
-2. Create a new branch for your feature or bug fix: git checkout -b feature/your-feature or git checkout -b bugfix/your-bugfix.
-3. Make your changes and ensure that your code follows the project's coding style and guidelines.
-4. Commit your changes with a descriptive commit message: git commit -m "Add feature: your feature description" or git commit -m "Fix: description of the bug fix".
-5. Push your branch to your forked repository: git push origin feature/your-feature or git push origin bugfix/your-bugfix.
-6. Open a pull request against the main branch of the original repository.
-7. Provide a clear description of the changes you have made in the pull request.
-8. Be responsive to any feedback or suggestions for improvements.
-
-Please note that all contributions are subject to review and may require some changes or improvements before being merged into the main project.
-
-By contributing to this project, you agree to license your contributions under the project's chosen license.
-
-Thank you for your valuable contributions!
-
-Feel free to customize these guidelines based on your specific project requirements or workflow.
-
-## License
-
-This project is licensed under the license found in the LICENSE file in the root directory of this source tree.
-
-## Contact
-
-For help or issues using the pre-trained models, please submit a GitHub issue.
-
-For other communications, please contact [Hükümdar](hkmdrfrtt@gmail.com).
+![results picture]([https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png](https://github.com/Egroses/FranzKafka/blob/main/Images/Results.png)https://github.com/Egroses/FranzKafka/blob/main/Images/Results.png)
