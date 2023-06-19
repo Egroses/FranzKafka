@@ -1,0 +1,38 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo_data:/data/db
+
+  kafka:
+    image: bitnami/kafka:latest
+    restart: always
+    environment:
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+
+  producer:
+    ports:
+      - 5005:5005
+    restart: always
+    build:
+      context: ./producer
+      dockerfile: producer.Dockerfile
+    depends_on:
+      - mongodb
+      - kafka
+
+  consumer:
+    ports:
+      - 5006:5006
+    restart: always
+    build:
+      context: ./consumer
+      dockerfile: consumer.Dockerfile
+    depends_on:
+      - kafka
