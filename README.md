@@ -18,7 +18,7 @@ The key features of our CDC system include its ability to provide real-time moni
 3. Build docker compose.
 ```
 docker compose build
-![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
+![build picture](https://github.com/Egroses/FranzKafka/blob/main/Images/build.png)
 ```
 
 ## Usage
@@ -26,31 +26,31 @@ docker compose build
 1. Run docker compose.
 ```
 docker compose up
-![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
+![run picture](https://github.com/Egroses/FranzKafka/blob/main/Images/run.png)
 ```
 
 2. Open second terminal and run:
 
 ```
 docker compose exec producer python producer.py
-![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
+![producer picture](https://github.com/Egroses/FranzKafka/blob/main/Images/producer%26consumerRun.png)
 ```
 
 2. Open third terminal and run:
 ```
 docker compose exec consumer python consumer.py
-![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
+![consumer picture](https://github.com/Egroses/FranzKafka/blob/main/Images/producer%26consumerRun.png)
 ```
 
 4. Open fourth and last terminal, connect mongo and insert a document:
 
 ```
 docker-compose exec mongodb mongosh
-![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
+![MongoDB picture](https://github.com/Egroses/FranzKafka/blob/main/Images/mongoBuild.png)
+
 use myDatabase
-![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
 db.myCollection.insertOne({"name": "Emirhan", "surname": "Gül"})
-![start picture](https://github.com/Egroses/NinjaNindo/blob/main/Images/Start.png)
+![insert picture](https://github.com/Egroses/FranzKafka/blob/main/Images/insert.png)
 ```
 
 5. When new document inserted, you should see `A new document has been sent to kafka!` in second terminal and `A new document has been received!` in thirth terminal.
