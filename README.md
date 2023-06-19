@@ -54,4 +54,4 @@ db.myCollection.insertOne({"name": "Emirhan", "surname": "Gül"})
 ```
 
 5. When new document inserted, you should see `A new document has been sent to kafka!` in second terminal and `A new document has been received!` in thirth terminal.
-![results picture](https://github.com/Egroses/FranzKafka/blob/main/Images/Results.png)https://github.com/Egroses/FranzKafka/blob/main/Images/Results.png)
+![results picture](https://github.com/Egroses/FranzKafka/blob/main/Images/Results.png)
