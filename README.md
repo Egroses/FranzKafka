@@ -13,7 +13,7 @@ The key features of our CDC system include its ability to provide real-time moni
 
 ## Setup
 
-1. Clone repository : "https://github.com/Egroses/FranzKafka.git" .
+1. Clone repository : "https://github.com/Egroses/FranzKafka.git" 
 2. Install docker-desktop.
 3. Build docker compose.
 ```
