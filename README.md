@@ -18,40 +18,41 @@ The key features of our CDC system include its ability to provide real-time moni
 3. Build docker compose.
 ```
 docker compose build
-![build picture](https://github.com/Egroses/FranzKafka/blob/main/Images/build.png)
 ```
+![build picture](https://github.com/Egroses/FranzKafka/blob/main/Images/build.png)
 
 ## Usage
 
 1. Run docker compose.
 ```
 docker compose up
-![run picture](https://github.com/Egroses/FranzKafka/blob/main/Images/run.png)
 ```
+![run picture](https://github.com/Egroses/FranzKafka/blob/main/Images/run.png)
 
 2. Open second terminal and run:
 
 ```
 docker compose exec producer python producer.py
-![producer picture](https://github.com/Egroses/FranzKafka/blob/main/Images/producer%26consumerRun.png)
 ```
+![producer picture](https://github.com/Egroses/FranzKafka/blob/main/Images/producer%26consumerRun.png)
 
 2. Open third terminal and run:
 ```
 docker compose exec consumer python consumer.py
-![consumer picture](https://github.com/Egroses/FranzKafka/blob/main/Images/producer%26consumerRun.png)
 ```
+![consumer picture](https://github.com/Egroses/FranzKafka/blob/main/Images/producer%26consumerRun.png)
 
 4. Open fourth and last terminal, connect mongo and insert a document:
 
 ```
 docker-compose exec mongodb mongosh
+```
 ![MongoDB picture](https://github.com/Egroses/FranzKafka/blob/main/Images/mongoBuild.png)
-
+```
 use myDatabase
 db.myCollection.insertOne({"name": "Emirhan", "surname": "Gül"})
-![insert picture](https://github.com/Egroses/FranzKafka/blob/main/Images/insert.png)
 ```
+![insert picture](https://github.com/Egroses/FranzKafka/blob/main/Images/insert.png)
 
 5. When new document inserted, you should see `A new document has been sent to kafka!` in second terminal and `A new document has been received!` in thirth terminal.
 ![results picture](https://github.com/Egroses/FranzKafka/blob/main/Images/Results.png)
