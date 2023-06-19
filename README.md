@@ -1,16 +1,7 @@
-# CDC with Apache Kafka and Mongo
+# FranzKafka
 
-Change Data Capture with Apache Kafka and Mongo using docker containers.
+Simple CDC Application Development Project with Apache Kafka
 
-## Table of Contents
-
-- [Description](#description)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Description
 
